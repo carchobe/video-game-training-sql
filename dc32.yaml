@@ -10,7 +10,7 @@ services:
       - pg-halo
     volumes:
       - ./halo-data.dump:/halo-data.dump
-      - halodata:/var/lib/postgres/data
+      - halodata:/var/lib/postgresql/data
     env_file: 
       - ./env_files/variables.env
 
