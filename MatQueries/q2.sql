@@ -7,9 +7,9 @@ CREATE TEMPORARY TABLE teammates_and_enemies AS (SELECT md2.player_gamertag AS a
 							   FROM match_details AS md
 							     JOIN match_details AS md2
 							       ON md.match_id = md2.match_id
-							         AND md.player_gamertag <> md2.player_gamertag)
+							         AND md.player_gamertag <> md2.player_gamertag);
 
 SELECT analysis_player, other_player, COUNT(1), AVG(analysis_player_won)
 FROM teammates_and_enemies
 GROUP BY 1,2
-ORDER BY 3 DESC
+ORDER BY 3 DESC;
